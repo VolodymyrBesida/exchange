@@ -1,0 +1,48 @@
+<mat-card class="mat-mdc-card mdc-card cardWithShadow theme-card">
+    <mat-card-header class="mat-mdc-card-header">
+        <div class="col-12 flex-item met-header-info">
+            <h3>Session</h3>
+            <span>{{ currentDate }}</span>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="mat-mdc-card-content b-t-1">
+        <div class="row flex-row">
+            <div class="col-5">
+                <mat-label>From:</mat-label>
+                <mat-select [(ngModel)]="selectedFrom"
+                 (ngModelChange)="fromTriggered($event)">
+                    <mat-option [value]="currencies.UAH">UAH</mat-option>
+                    <mat-option [value]="currencies.USD">USD</mat-option>
+                    <mat-option [value]="currencies.EUR">EUR</mat-option>
+                </mat-select>
+            </div>
+            <div class="col-5">
+                <mat-label>To:</mat-label>
+                <mat-select [(ngModel)]="selectedTo"
+                 (ngModelChange)="toTriggered()">
+                    <mat-option [value]="currencies.UAH">UAH</mat-option>
+                    <mat-option [value]="currencies.USD">USD</mat-option>
+                    <mat-option [value]="currencies.EUR">EUR</mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div class="row flex-row exchange-result">
+            <div class="col-4">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Amount</mat-label>
+                    <input [(ngModel)]="amountToExchange" type="number" matInput>
+                  </mat-form-field>
+            </div>
+            <div class="col-4 flex-item flex-result">
+                <button (click)="exchange()" mat-flat-button color="primary" class="button-text" >EXCHANGE</button>
+            </div>
+        </div>
+        <div *ngIf="exchangedResult" class="row">
+            <div class="col-12">
+                <div class="flex-item exchange-message-result">
+                    {{ exchangedResult }}
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,40 @@
+.met-header-info {
+    justify-content: space-between;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-rate {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flex-item {
+    display: flex;
+    align-items: center;
+}
+
+.exchange-result {
+    padding-top: 25px;
+}
+
+.flex-result {
+    justify-content: end;
+}
+
+.button-text {
+    font-weight: 600;
+}
+
+.exchange-message-result {
+    background-color: #e5f3fb;
+    color: #0085db;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    font-weight: 700;
+}

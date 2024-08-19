@@ -1,0 +1,31 @@
+.flex-exchange-col {
+    display: flex;
+    justify-content: start;
+    
+    span:first-of-type {
+        margin-right: 15px;
+    }
+
+    span {
+        display: flex;
+        font-size: small;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0085db;
+            transition: width 0.5s ease-in-out;
+        }
+       
+        &:hover:after {
+            width: 100%;
+        }
+    }
+}
